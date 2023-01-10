@@ -1,0 +1,25 @@
+
+    
+{% extends 'store/Main.html' %}
+{% load static %}
+{% block title %}Edit Product - {{object.name}}{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+
+            <h2>Edit Product</h2>
+            <form method="POST" action ="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="submit">
+                    <a class="cancel" href="{% url 'store' %}">Back</a>
+                    <a class="delete" href="{% url 'delete_product' product.id %}">Delete Product</a>
+                    
+                    <input type='submit' value="Confirm">
+                </div>
+            </form>
+
+        </div>
+{% endblock %}

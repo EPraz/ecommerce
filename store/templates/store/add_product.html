@@ -1,0 +1,24 @@
+
+    
+{% extends 'store/Main.html' %}
+{% load static %}
+{% block title %}Add Product{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+        <div class="container">
+
+            <h2>Add New Product</h2>
+            <form method="POST" action ="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="submit">
+                    <a class="cancel" href="{% url 'store' %}">Back</a>
+                    
+                    <input type='submit' value="Confirm">
+                </div>
+            </form>
+
+        </div>
+{% endblock %}

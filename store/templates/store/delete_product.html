@@ -1,0 +1,17 @@
+{% extends 'store/Main.html' %}
+
+{% load static %}
+{% block title %}Delete - {{ object.name|upper }}{% endblock %}
+
+{% block content %}
+    <h2>Delete {{object.name|upper }}</h2>
+    <form method="POST" action="">
+        <div>
+
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ object.name|upper }} with <strong>ID:</strong>: {{object.id}}?</p>
+            <a href="{% url 'edit_product' object.id %}">Cancel</a>
+            <input type="submit" value="Confirm">
+        </div>
+    </form>
+{% endblock %}

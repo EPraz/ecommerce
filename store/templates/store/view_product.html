@@ -1,0 +1,11 @@
+{% extends 'store/Main.html' %}
+{% load static %}
+{% block title %}My Restaurant - Menu {% endblock %}
+
+{% block content %}
+<h1>Hello - {{object_list}}</h1>
+{% for object in object_list %}
+{{object}}
+{% endfor %}
+<h1>Hello - {{product}}</h1>
+{% endblock %}
